@@ -1,0 +1,3 @@
+kafka:
+  boostrap-servers: kafka:29092
+  consumer-group-id: prod-java-user-create-service

@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 2
+      maximum-pool-size: 30
+      auto-commit: true
+      connection-timeout: 10000
+      username: admin
+      password: admin
+    url: jdbc:postgresql://localhost:5432/egm_db
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 4
+        order_inserts: true
+        order_updates: true
+        format-sql: true
+
+kafka:
+  boostrap-servers: localhost:9092
+  consumer-group-id: java-user-create-service
+  auto-offset-reset: earliest
+
